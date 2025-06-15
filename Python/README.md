@@ -20,6 +20,7 @@ The model preparation procedure consists of six steps:
 - The decoder part of the VAE is combined with the CNN to form a complete model, which is then exported to ONNX format and converted into a .coe file for initializing Block RAM on the FPGA.
 
 ## Collect Game Frames
+The game frames are generated and collected by running a Pong game implemented in Pygame, using pre-generated random keyboard actions as input. In this project, because the CNN output is deterministic, the game should avoid randomness and sudden full-frame changes to maintain good demo quality. This limitation can be addressed in future work by using sample-based models such as diffusion models.
 ```
 python game.py
 ``` 

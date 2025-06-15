@@ -268,5 +268,5 @@ def generate_player_events(num_event_list):
     return player_events, player_encoding
 
 if __name__ == "__main__":
-    player_events, player_encoding = generate_player_events(100)
+    player_events, player_encoding = generate_player_events(1000000)
     run_pong_game(player_events, player_encoding)
