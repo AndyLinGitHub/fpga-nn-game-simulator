@@ -1,0 +1,11 @@
+torch 
+torchvision 
+torchaudio
+numpy==1.23.5 
+gym[atari, accept-rom-license]
+matplotlib
+imageio
+opencv-python
+pygame
+tensorboard
+ptflops
