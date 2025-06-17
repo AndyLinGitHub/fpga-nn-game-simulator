@@ -1,3 +1,5 @@
+# Block Diagram
+
 # Description
 ## Top Module (top.vhd)
 - The top-level module includes button inputs and HDMI output ports.
@@ -104,7 +106,9 @@ write input frame(1)(0~3) to input frame(0)(0~3)
 write input frame(2)(0~3) to input frame(1)(0~3)
 write input frame(3)(0~3) to input frame(2)(0~3)
 write result(0~3) to input frame(3)(0~3)
-CONVT (transposed convolution)
+```
+- CONVT (transposed convolution)
+```
 for (i=0, i<output channel, i++){
     load bias from memory to bias buffer
 	for (j=0, j<input input_size_row, j++){
