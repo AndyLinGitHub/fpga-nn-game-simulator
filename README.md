@@ -31,6 +31,18 @@
 
 - After completing the design, generate the bitstream. Once the bitstream has been successfully generated, program it to the device.
 
+## Software Desgin
+See README.md in ./Python
+
+## Hardware Design
+See README.md in ./VHDL
+
+## Contribution
+Tzu-Chi Huang: Hardware design
+Yu-An Lin: Software design, Neural Network training, Vivado
+
+
+
 
 
 

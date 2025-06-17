@@ -155,5 +155,9 @@ We use HDMI to display our game on a monitor at 640x480 resolution, 60 Hz refres
 ### RGB to DVI
 We use the IP core provided by Digilent.
 
+## Simulaion
+For simulation, we connect the NNA and BRAM modules within a top-level testbench to verify the system functionality across all layers. During simulation, each time data is written to BRAM, both the address and data value are recorded into a text file. After the simulation completes, we compare this generated file against the expected output produced by our reference software implementation, ensuring correctness and consistency.
+
+
 
 
