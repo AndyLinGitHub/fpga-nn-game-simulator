@@ -1,5 +1,6 @@
 # Block Diagram
-![Block Diagram 1 ](../Image/bd_1.gif)
+## Top Module (top.vhd)
+![Block Diagram 1 ](../Image/bd_1.png)
 
 # Description
 ## Top Module (top.vhd)
