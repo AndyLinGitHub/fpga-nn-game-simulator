@@ -122,19 +122,19 @@ add bias to the last row of the last output channel
 output the last row of the last output channel
 ```
 
-# BRAM
+## BRAM
 We use the BRAM IP core provided by Vivado to generate the Block RAM module. Each row is configured to be 256 bits wide, with a total of 52,224 rows. A dual-port BRAM configuration is used, allowing simultaneous access by both the NNA and HDMI modules.
 
-# HDMI
+## HDMI
 We use HDMI to display our game on a monitor at 640x480 resolution, 60 Hz refresh rate.
 
-## HDMI Timing Generation (hdmi_timing_gen.vhd)
+### HDMI Timing Generation (hdmi_timing_gen.vhd)
 - Originally written in Verilog (sourced from: https://blog.csdn.net/zhoutaopower/article/details/113485579), we translated it into VHDL.
 - The horizontal counter (h_counter) ranges from 0 to 799.
 - The vertical counter (v_counter) ranges from 0 to 524.
 - The valid display area is defined as: (h, v) = (160–799, 45–524)
 
-## HDMI Data Generation (hdmi_data_gen.vhd)
+### HDMI Data Generation (hdmi_data_gen.vhd)
 - This module generates RGB pixel data to be displayed via HDMI.
 - We display our game frame within the region: (h, v) = (256–511, 256–511)
 - Our original game frame size is 64×64, and we scale it up to 256×256 for display.
@@ -147,7 +147,7 @@ We use HDMI to display our game on a monitor at 640x480 resolution, 60 Hz refres
     - If (h, v) is within (256–511, 256–511), we output the scaled frame data.
     - Otherwise, we output black.
 
-## RGB to DVI
+### RGB to DVI
 We use the IP core provided by Digilent.
 
 
