@@ -37,7 +37,7 @@ class VAEConfig:
         self.padding = 1
         self.learning_rate = 1e-3
         self.batch_size = 128
-        self.epochs = 1
+        self.epochs = 1024
         self.data_dir = "pong_frames"
         self.data_dir2 = "pong_frames"        
         self.log_dir = "runs/pong_vae"
