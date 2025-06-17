@@ -13,6 +13,14 @@
 - HDMI capable Monitor/Display
 
 ## Demo Setup
-- Create a new Vivado project and set the target language to VHDL. Then, add all the files from the VHDL folder as source files to the project.
+- Create a new Vivado project and set the target language to VHDL. Then, add all the vhdl files from the ```VHDL``` folder as source files to the project.
 ![Step 1](Image/step_1.png)
+- On the following page, add the constraint file located in the ```VHDL``` folder. Then, in the subsequent steps, select the Nexys Video board as the target hardware. Complete the remaining steps to finish creating the project.
+- Download the HDMI example provided by Digilent in the following repository: ```https://github.com/Digilent/Nexys-Video-HDMI#```. Then, add the ```rgb2dvi``` IP core from this repository to your Vivado project.
+![Step 3](Image/step_3.png)
+
+
+
+
+
 
