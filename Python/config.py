@@ -35,9 +35,9 @@ class VAEConfig:
         self.kernel_size = 4
         self.stride = 2
         self.padding = 1
-        self.learning_rate = 1e-4
+        self.learning_rate = 1e-3
         self.batch_size = 128
-        self.epochs = 1024
+        self.epochs = 1
         self.data_dir = "pong_frames"
         self.data_dir2 = "pong_frames"        
         self.log_dir = "runs/pong_vae"
@@ -53,24 +53,24 @@ class VAEConfig:
 class UNetConfig:
     def __init__(self):
         self.name = "unet"
-        self.data_dir = "escape_frames"        
-        self.game = "escape_v3"
-        self.log_dir = "runs/escape_unet"
-        self.conds_dir = "escape_frames/escape_v3"
+        self.data_dir = "pong_frames"        
+        self.game = "pong"
+        self.log_dir = "runs/unet"
+        self.conds_dir = "pong_frames/pong"
         self.conds_file = "player_encoding.pkl"
         self.latent_dim = 4
         self.sequence_length = 4
         self.cond_dim = 8
         self.num_layers = 1
-        self.image_latent = "escape_image_latent3.pt"
-        self.learning_rate =1e-3
+        self.image_latent = "image_latent.pt"
+        self.learning_rate = 1e-3
         self.weight_decay = 0
         self.start_factor = 1
         self.end_factor = 0.1
         self.batch_size = 4096
         self.epochs = 1024
-        self.checkpoint = "runs/escape_unet/20250612_164709/best_model.pt"                                                 #"runs/pong_unet/20250529_175655/best_model.pt"
-        self.quant = True
+        self.checkpoint = None
+        self.quant = False
         self.clip_min = -4.0
         self.clip_max = 4.0
         self.decimals = 4

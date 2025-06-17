@@ -36,10 +36,14 @@ Use TensorBoard to view the log
 tensorboard --logdir ./runs
 ```
 
-
-## Train CNN
+## Train Unet
+In this application, we use a U-Net model to predict the next frame. For the demo, to fit within the Block RAM constraints, the U-Net is simplified to a standard CNN. You can increase the ```num_layers``` parameter in the ```UNetConfig``` class (in config.py) to create a more complex U-Net model.
 ```
-python cnn.py
+python unet.py --vae.checkpoint [QUANTIZED_VAE_CHECKPOINT_PATH] --vae.sigmoid_base 4 --vae.quant True
 ```
 
+Use TensorBoard to view the log
+```
+tensorboard --logdir ./runs
+```
 ## Export Model
