@@ -54,7 +54,7 @@ if (input neuron = 8){
         load input (button) to input buffer
         load weight(i) to weight buffer
         in_ch_accu(i) <= in_ch_accu(i) + input*weight(i)
-        }
+    }
 }
 if (input neuron = 32){
 	for (i=0, i<32, i++){
@@ -62,8 +62,8 @@ if (input neuron = 32){
 	        load input(0+j ~ 15+j) from memory to input buffer 
             load weight(i)(0+j ~ 15+j) to weight buffer
             in_ch_accu(i) <= in_ch_accu(i) + input*weight(i)
-            }
         }
+    }
 }
 
 output 32 data (2 clocks) (each clock 16 data)
@@ -92,7 +92,7 @@ for (i=0, i<output channel, i++){
         load input to input buffer
         in_ch_accu <= in_ch_accu + mac_output (16 data)
     }
-output for an output channel (16 data)
+    output for an output channel (16 data)
 }
 ```
 
