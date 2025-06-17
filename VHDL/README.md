@@ -49,17 +49,18 @@ output = input × mul + input + add
 ```
 load bias 0~15 to input channel accumulator
 load bias 16~31 to input channel accumulator
+
 if (input neuron = 8){
-	for (i=0, i<32, i++){
-        load input (button) to input buffer
+    for (i=0, i<32, i++){
+	load input (button) to input buffer
         load weight(i) to weight buffer
         in_ch_accu(i) <= in_ch_accu(i) + input*weight(i)
     }
 }
 if (input neuron = 32){
-	for (i=0, i<32, i++){
-	    for (j=0, j<32, j=j+16){
-	        load input(0+j ~ 15+j) from memory to input buffer 
+    for (i=0, i<32, i++){
+        for (j=0, j<32, j=j+16){
+	    load input(0+j ~ 15+j) from memory to input buffer 
             load weight(i)(0+j ~ 15+j) to weight buffer
             in_ch_accu(i) <= in_ch_accu(i) + input*weight(i)
         }
@@ -85,8 +86,8 @@ for (i=0, i<16, i++){
 ```
 (only 4x4 input size and 4x4 output size)
 for (i=0, i<output channel, i++){
-	load bias to in_ch_accu
-	for(j=0, j<input channel, j++){
+    load bias to in_ch_accu
+    for(j=0, j<input channel, j++){
         load weight (first 8 weight) to weight buffer
         load weight (last 1 weight) to weight buffer
         load input to input buffer
@@ -111,15 +112,15 @@ write result(0~3) to input frame(3)(0~3)
 ```
 for (i=0, i<output channel, i++){
     load bias from memory to bias buffer
-	for (j=0, j<input input_size_row, j++){
-		for (k=0, k<input channel, k++){
-			load weight(k) to weight buffer
-			load input(k)(jth row) to input buffer
-			accumulate in_ch_accu (1 input row => 4 row in in_ch_accu)
-			(if in_size=32, each row need 2 loop)
-		}
-		add bias to first 2 row of in_ch_accu
-		output first 2 row of in_ch_accu (output(i)(2j-1th & 2jth row))
+    for (j=0, j<input input_size_row, j++){
+        for (k=0, k<input channel, k++){
+            load weight(k) to weight buffer
+	    load input(k)(jth row) to input buffer
+	    accumulate in_ch_accu (1 input row => 4 row in in_ch_accu)
+	    (if in_size=32, each row need 2 loop)
+	}
+	add bias to first 2 row of in_ch_accu
+	output first 2 row of in_ch_accu (output(i)(2j-1th & 2jth row))
     }
 }
 add bias to the last row of the last output channel
