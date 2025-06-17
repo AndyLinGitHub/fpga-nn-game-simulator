@@ -107,7 +107,7 @@ write input frame(2)(0~3) to input frame(1)(0~3)
 write input frame(3)(0~3) to input frame(2)(0~3)
 write result(0~3) to input frame(3)(0~3)
 ```
-- CONVT (transposed convolution)
+- CONVT (Transposed Convolution)
 ```
 for (i=0, i<output channel, i++){
     load bias from memory to bias buffer
