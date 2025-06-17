@@ -9,3 +9,4 @@ opencv-python
 pygame
 tensorboard
 ptflops
+onnx

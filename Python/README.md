@@ -47,3 +47,9 @@ Use TensorBoard to view the log
 tensorboard --logdir ./runs
 ```
 ## Export Model
+Running ```onnx_export.py``` will generate a file named ```model.onnx```, which can be visualized using Netron. Then, running ```onnx2bram.py``` will produce ```initial_hex_bram.coe```, which is used to initialize the Block RAM on the FPGA.
+
+```
+python onnx_export.py --vae.checkpoint [QUANTIZED_VAE_CHECKPOINT_PATH] --vae.sigmoid_base 4 --vae.quant True --unet.checkpoint [QUANTIZED_UNET_CHECKPOINT_PATH] --unet.quant True
+python onnx2bram.py 
+```

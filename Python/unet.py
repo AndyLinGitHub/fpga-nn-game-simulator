@@ -177,7 +177,7 @@ class LatentSequenceDataset(Dataset):
         with open(conds_path, 'rb') as f:
             self.conds = pickle.load(f)
 
-        print(len(self.conds))
+        #print(len(self.conds))
 
         if not os.path.exists(unet_config.image_latent):
             image_folder = os.path.join(unet_config.data_dir, unet_config.game)
