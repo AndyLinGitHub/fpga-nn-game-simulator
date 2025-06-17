@@ -181,7 +181,7 @@ begin
 	    BRAM_PORTA_din => bram_din_a,
 	    BRAM_PORTA_dout => bram_dout_a,
 
-	    BRAM_PORTB_clk => clk_out1_b,
+	    BRAM_PORTB_clk => clk_out1,
 	    BRAM_PORTB_en => bram_en_b,
 	    BRAM_PORTB_we => bram_we_b,
 	    BRAM_PORTB_addr => bram_addr_b,
@@ -191,7 +191,7 @@ begin
 
 	-- port b always read
 	bram_en_b <= '1';
-	bram_we_b <= '0';
+	bram_we_b <= "0";
 	bram_din_b <= (others => '0');
 
 
