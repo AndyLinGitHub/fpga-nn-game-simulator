@@ -38,8 +38,8 @@ See README.md in ```Python```
 See README.md in ```VHDL```
 
 ## Contribution
-Tzu-Chi Huang: Hardware design
-Yu-An Lin: Software design, Neural Network training, Vivado
+- Tzu-Chi Huang: Hardware design
+- Yu-An Lin: Software design, Neural Network training, Vivado
 
 
 
